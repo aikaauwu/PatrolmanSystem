@@ -8,7 +8,7 @@ package patrol.dao;
  * Student id:
  */
 
-import java.sql.*;  
+import java.sql.*;   
 import java.util.*;
 import java.util.Date;
 import patrol.connection.*; //import patrol.connection.ConnectionManager;

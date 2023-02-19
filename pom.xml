@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>patrolmansystem2.heroku</groupId>
+  <artifactId>PatrolmanMavenProject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+
+    <dependencies>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlet</artifactId>
+      <version>9.4.7.v20170914</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+  </dependencies>
+  <build>
+  
+    <plugins>
+      <plugin>
+        <groupId>com.heroku.sdk</groupId>
+        <artifactId>heroku-maven-plugin</artifactId>
+        
+        
+        <version>3.0.7</version>
+        <configuration>
+        
+        <appName>patrolmanSystem2</appName>
+          <buildpacks>
+            <buildpack>heroku/jvm</buildpack>
+            
+          </buildpacks>
+        </configuration>
+      </plugin>
+    </plugins>
+    
+  </build>
+  
+</project> 

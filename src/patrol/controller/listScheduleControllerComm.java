@@ -1,8 +1,8 @@
 package patrol.controller;
 
-import jakarta.servlet.RequestDispatcher;
+import javax.servlet.RequestDispatcher;
  
-import jakarta.servlet.ServletException;
+import javax.servlet.ServletException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -176,37 +177,36 @@ a{margin-right: 4px;}
 <table>
   <tr>
      <th>Patrolman ID</th>
-	<th>Username</th>
     <th>Schedule ID</th>
     <th>Time</th>
 	<th>Date</th>
 	<th>Location</th>
-	<th>Tools</th>
+	<th>Location Details</th>
+	   <th>Schedule Details</th>
 	   
   </tr>
   <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td>-</td>
-	  <td><a href="viewDetailLocation.jsp" class="button button1"><b>VIEW </b></a></td>
-	 <td><a href="viewDetailSchedule.jsp" class="button button1"><b>VIEW </b></a></td>
-  </tr>
-  
+<c:forEach items="${schedules}" var="schedule">
   <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td>-</td> 
-	   <td><a href="viewDetailLocation.jsp" class="button button1"><b>VIEW </b></a></td>
-	 <td><a href="viewDetailSchedule.jsp" class="button button1"><b>VIEW </b></a></td>
+  		<td><c:out value="${schedule.patrolmanId}" /></td>
+  		<td><c:out value="${schedule.scheduleId}" /></td>
+  		<td><c:out value="${schedule.scheduleTime}" /></td>
+  		<td><c:out value="${schedule.scheduleDate}" /></td>
+  		<td><c:out value="${schedule.locationId}" /></td>
+  		<td><a href="viewLocation?action=view&locationId=<c:out value="${schedule.locationId}"/>"  class="button button1"><b>VIEW </b></a></td>
+	 	<td><a href="viewSchedule?action=view&scheduleId=<c:out value="${schedule.scheduleId}"/>" class="button button1"><b>VIEW </b></a></td>
+</c:forEach>
+	
   </tr>
+   
  
 </table>
+</table>
 </div>
-	</div>
+</div>
+</div>
+</div>
+</div>
 
 </body>
 </html>

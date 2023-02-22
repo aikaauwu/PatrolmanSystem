@@ -111,7 +111,7 @@ a {text-decoration:none;}
     <div class="center">
 	
          <div class="container">
-	      <a href="res viewReport.jsp"><img src="img/close.png"></a>
+	      <a href="ListReport"><img src="img/close.png"></a>
 		 
             <div class="text"><b>Report Detail</b></div>
 			<div id="frmRegistration">
@@ -125,19 +125,13 @@ a {text-decoration:none;}
 			
 		 	
 				<div class="data">
-                  <label>Report ID:</label> 		  
+                  <label>Report ID: <c:out value="${report.reportId}" /> </label>              
                </div>
-			
                <div class="data">
-                  <label>Patrolman ID:</label> 				  
+                  <label>Patrolman ID: <c:out value="${report.patrolmanId}" /></label>              
                </div>
-			   
                <div class="data">
-                  <label>Report Description:</label>  				
-               </div>
-			
-			<div class="data">
-                  <label>Date:</label>  				
+                  <label>Phone Number: <c:out value="${report.reportDescription}" /></label>      
                </div>
 			
             </form>

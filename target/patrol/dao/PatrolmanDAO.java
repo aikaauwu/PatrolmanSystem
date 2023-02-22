@@ -49,7 +49,7 @@ public class PatrolmanDAO {
 			patrolmanPassword = bean.getPatrolmanPassword();
 			*/
 			
-			ps = con.prepareStatement("INSERT INTO patrolman(patrolmanId,residentId,patrolmanUsername,patrolmanPassword)VALUES(?,?,?)");
+			ps = con.prepareStatement("INSERT INTO patrolman(patrolmanId,residentId,patrolmanUsername,patrolmanPassword)VALUES(?,?,?,?)");
 			ps.setString(1, patrolmanId);
 			ps.setInt(2, residentId);
 			ps.setString(2, patrolmanUsername);
@@ -171,6 +171,130 @@ public class PatrolmanDAO {
 		
 		return patrolman;
 		}
+	
+	
+	
+	public static Patrolman getPatrolmanProfile(String patrolmanUsername) { 
+		Patrolman patrolman = new Patrolman();
+		try {
+			//call getConnection() method
+			con = ConnectionManager.getConnection();
+
+			
+			ps = con.prepareStatement("SELECT * FROM patrolman WHERE patrolmanUsername=?");
+			ps.setString(1, patrolmanUsername);
+
+			//execute query
+			
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				patrolman.setPatrolmanId(rs.getString("patrolmanId"));
+				patrolman.setResidentId(rs.getInt("residentId"));
+				patrolman.setPatrolmanUsername(rs.getString("patrolmanUsername"));
+				patrolman.setPatrolmanPassword(rs.getString("patrolmanPassword"));
+				
+			
+			//close connection
+			con.close();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return patrolman; 
+	}
+	
+	public void updatePatrolman(Patrolman bean) {
+	    
+	      patrolmanId = bean.getPatrolmanId();
+	      residentId = bean.getResidentId();
+	      patrolmanUsername = bean.getPatrolmanUsername();
+	      patrolmanPassword = bean.getPatrolmanPassword();
+	  
+	    try {      
+	      //call getConnection() method
+	      con = ConnectionManager.getConnection();
+	      
+	      //3. create statement
+	      ps = con.prepareStatement("UPDATE patrolman SET patrolmanUsername=?, patrolmanPassword=? WHERE patrolmanId=?");
+	      ps.setString(1, patrolmanUsername);
+	      ps.setString(2, patrolmanPassword);
+	      ps.setString(3, patrolmanId);
+	      
+	      //4. execute query
+	      ps.executeUpdate();
+	      
+	      System.out.println("Successfully updated");
+	      
+	      //5. close connection
+	      con.close();
+	      
+	    }catch(Exception e) {
+	      e.printStackTrace();
+	    }
+	  }
+	
+	public static Resident getResidentProfile(String residentUsername) { 
+		Resident resident = new Resident();
+		try {
+			//call getConnection() method
+			con = ConnectionManager.getConnection();
+
+			
+			ps = con.prepareStatement("SELECT * FROM resident WHERE residentUsername=?");
+			ps.setString(1, residentUsername);
+
+			//execute query
+			
+			/*rs = ps.executeQuery();
+			if(rs.next()) {
+			s.setId(rs.getInt("id"));
+			s.setName(rs.getString("name"));
+			s.setBrand(rs.getString("brand"));
+			s.setColor(rs.getString("color"));
+			s.setMaterial(rs.getString("material"));
+			s.setPrice(rs.getDouble("price"));
+			s.setQuantity(rs.getInt("quantity"));			
+			}
+			
+			
+			order.setOrderId(rs.getInt("orderId"));
+			order.setAmount(rs.getDouble("amount"));
+			order.setSleeve(rs.getFloat("sleeve"));
+			order.setShoulder(rs.getFloat("shoulder"));
+			order.setChest(rs.getFloat("chest"));
+			order.setTopLength(rs.getFloat("topLength"));
+			order.setWaist(rs.getFloat("waist"));
+			order.setHip(rs.getFloat("hip"));
+			order.setBottomLength(rs.getFloat("bottomLength"));
+			order.setCustomerId(rs.getInt("customerId"));*/
+			
+			//mybaju2
+			
+			/*private String residentId;
+			private String residentUsername,residentPassword,residentName,residentAddress,residentEmail;
+			private int residentPhoneNum;
+			*/
+			
+			rs = ps.executeQuery();
+			if(rs.next()) {
+			resident.setResidentId(rs.getInt("residentId"));
+			resident.setResidentName(rs.getString("residentName"));
+			resident.setResidentUsername(rs.getString("residentUsername"));
+			resident.setResidentPassword(rs.getString("residentPassword"));
+			resident.setResidentAddress(rs.getString("residentAddress"));
+			resident.setResidentEmail(rs.getString("residentEmail"));
+			resident.setResidentPhoneNum(rs.getInt("residentPhoneNum"));
+			
+			//close connection
+			con.close();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return resident; 
+	}
 	}
 	
 

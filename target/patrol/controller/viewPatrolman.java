@@ -1,6 +1,7 @@
 package patrol.controller;
 
-import jakarta.servlet.RequestDispatcher; 
+import jakarta.servlet.RequestDispatcher;
+ 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -35,8 +36,8 @@ public class viewPatrolman extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String patrolmanId = request.getParameter("patrolmanId");
-		request.setAttribute("patrolman",PatrolmanDAO.getPatrolmanDetails());
-		RequestDispatcher view = request.getRequestDispatcher("comm viewPat.jsp"); //schedule page
+		request.setAttribute("patrolmans",PatrolmanDAO.getPatrolmanProfile(patrolmanId));
+		RequestDispatcher view = request.getRequestDispatcher("comm viewPatProfile.jsp"); //schedule page
 		view.forward(request, response);
 	}
 

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class scheduleModel {
 	private String scheduleId;
-	private String dateCreated;
+	private String scheduleDate;
 	private String patrolmanId;
 	private String scheduleTime;
 	private String locationId;
@@ -31,11 +31,11 @@ public class scheduleModel {
 		this.scheduleTime = scheduleTime;
 	}
 	
-	public String getDateCreated() {
-		return dateCreated;
+	public String getscheduleDate() {
+		return scheduleDate;
 	}
-	public void setDateCreated(String dateCreated) {
-		this.dateCreated = dateCreated;
+	public void setscheduleDate(String scheduleDate) {
+		this.scheduleDate = scheduleDate;
 	}
 	
 	public String getLocationId() {

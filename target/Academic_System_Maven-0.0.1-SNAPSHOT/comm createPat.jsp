@@ -154,7 +154,7 @@ a {text-decoration:none;}
             <form action="CreatePatrolmanServlet">
 			<div class="hero">
 			
-			<form action="CreatePatrolmanServlet" method="post">
+			<form action="CreatePatrolmanServlet" method="get">
   <div class="imgcontainer">
   </div>
 

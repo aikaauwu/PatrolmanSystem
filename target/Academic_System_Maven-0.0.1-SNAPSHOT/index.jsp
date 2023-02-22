@@ -135,7 +135,7 @@ a {text-decoration:none;}
          <div class="container">
 	
 		 
-            <div class="text"><b>Zulsidents Login</b></div>
+            <div class="text"><b>Residents Login</b></div>
            
 				<div id="frmRegistration">
 						<div class="hero">

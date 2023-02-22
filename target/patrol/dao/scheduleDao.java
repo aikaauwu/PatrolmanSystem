@@ -8,7 +8,7 @@ package patrol.dao;
  * Student id:
  */
  
-import java.sql.*;      
+import java.sql.*;       
 import java.util.*;
 import java.util.Date;
 
@@ -23,7 +23,7 @@ public class scheduleDao {
 	private static ResultSet rs = null;
 	private static String sql;
 	private String scheduleId;
-	private String dateCreated;
+	private String scheduleDate;
 	private String patrolmanId;
 	private String scheduleTime;
 	private String locationId;
@@ -33,7 +33,7 @@ public class scheduleDao {
 		
 		scheduleId = bean.getScheduleId();
 		patrolmanId = bean.getPatrolmanId();
-		dateCreated = bean.getDateCreated();
+		scheduleDate = bean.getscheduleDate();
 		scheduleTime = bean.getScheduleTime();
 		locationId = bean.getLocationId();
 	
@@ -44,11 +44,11 @@ public class scheduleDao {
 
 			//create statement
 						
-			ps = con.prepareStatement("INSERT INTO schedule(scheduleId,patrolmanId,scheduleTime,dateCreated,locationId)VALUES(?,?,?,?,?)");
+			ps = con.prepareStatement("INSERT INTO schedule(scheduleId,patrolmanId,scheduleTime,scheduleDate,locationId)VALUES(?,?,?,?,?)");
 			ps.setString(1, scheduleId);
 			ps.setString(2, patrolmanId);
 			ps.setString(3, scheduleTime);
-			ps.setString(4, dateCreated);
+			ps.setString(4, scheduleDate);
 			ps.setString(5, locationId);
 			//execute query
 			ps.executeUpdate();
@@ -63,28 +63,28 @@ public class scheduleDao {
 	}
 	
 	public static List<scheduleModel> getScheduleDetails() { 
-		List<scheduleModel> schedules = new ArrayList<scheduleModel>(); 
+		List<scheduleModel> schedule = new ArrayList<scheduleModel>(); 
 		try { 
 			//call getConnection() method
 			con = ConnectionManager.getConnection();
 
 			//create statement
 			stmt = con.createStatement();
-			String sql = "SELECT * FROM schedule BY scheduleId";
+			String sql = "SELECT * FROM schedule ORDER BY scheduleId";
 
 			
 			//execute query
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {		//process result
-				scheduleModel schedule = new scheduleModel();
-				schedule.setScheduleId(rs.getString("scheduleId"));
-				schedule.setPatrolmanId(rs.getString("patrolmanId"));
-				schedule.setScheduleTime(rs.getString("scheduleTime"));
-				schedule.setDateCreated(rs.getString("dateCreated"));
-				schedule.setLocationId(rs.getString("locationId"));
+				scheduleModel s = new scheduleModel();
+				s.setScheduleId(rs.getString("scheduleId"));
+				s.setPatrolmanId(rs.getString("patrolmanId"));
+				s.setScheduleTime(rs.getString("scheduleTime"));
+				s.setscheduleDate(rs.getString("scheduleDate"));
+				s.setLocationId(rs.getString("locationId"));
 			
-				schedules.add(schedule);
+				schedule.add(s);
 			}
 
 
@@ -95,7 +95,7 @@ public class scheduleDao {
 			e.printStackTrace(); 
 		}
 
-		return schedules; 
+		return schedule; 
 	}
 
 	

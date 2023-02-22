@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -175,29 +176,23 @@ a{margin-right: 4px;}
 <table>
   <tr>
      <th>Patrolman ID</th>
-	<th>Username</th>
     <th>Schedule ID</th>
     <th>Time</th>
 	<th>Date</th>
 	<th>Location</th>
   </tr>
-  <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td>-</td>
-	 <td>-</td>
-	 </tr>
   
+
+							
+<c:forEach items="${schedules}" var="schedule">
   <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td>-</td> 
-	 <td>-</td>
-  </tr>
+  		<td><c:out value="${schedule.patrolmanId}" /></td>
+  		<td><c:out value="${schedule.scheduleId}" /></td>
+  		<td><c:out value="${schedule.scheduleTime}" /></td>
+  		<td><c:out value="${schedule.scheduleDate}" /></td>
+  		<td><c:out value="${schedule.locationId}" /></td>
+  		 <td><a href="viewScheduleComm?action=view&scheduleId=<c:out value="${schedule.scheduleId}"/>" class="button">View</a></td>
+</c:forEach>
  
 </table>
 </div>

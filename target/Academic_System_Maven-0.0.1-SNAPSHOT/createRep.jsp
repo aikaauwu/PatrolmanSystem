@@ -147,29 +147,29 @@ a {text-decoration:none;}
 		 
             <div class="text"><b>CREATE REPORT</b></div>
 			
-			<form action="/action_page.php" method="post">
+			<form action="CreateReport" method="post">
   <div class="imgcontainer">
   </div>
 
 
 			<div class="data">
                   <label>Patrolman ID:</label> 
-                  <input type="text" required>			  
+                  <input type="text" name="patrolmanId" >			  
                </div>
 			
                <div class="data">
                   <label>Username:</label> 	
-                  <input type="text" required>				  
+                  <input type="text" name="patrolmanUsername" >				  
                </div>
 			   
                <div class="data">
                   <label>Report Description:</label>  
-                  <input type="text" required> 					
+                  <input type="text" name="reportDescription" > 					
                </div>
                
                <div class="data">
-                  <label>Report Date:</label>  
-                  <input type="date" required> 					
+                  <label>Report Date: (YYYY-MM-DD)</label>  
+                  <input type="text" name="reportDateSubmit" > 					
                </div>
 			  
                <div class="btn">

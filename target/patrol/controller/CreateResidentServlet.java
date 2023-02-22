@@ -1,6 +1,6 @@
 package patrol.controller;
 
-import java.io.IOException;    
+import java.io.IOException;     
 
 
 import jakarta.servlet.RequestDispatcher;

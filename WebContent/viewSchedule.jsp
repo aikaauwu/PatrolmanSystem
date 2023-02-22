@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -131,11 +132,8 @@ form .btn:hover button{
 <body style="margin:0; padding:0; font-family:Arial;background-color:white;">
     <div class="top">
 			<div class="navbar">
-			    <div class="nav-logo" style="margin-left: 10%; margin-top: 1%;">
-		          
+			    <div class="nav-logo" style="margin-left: 10%; margin-top: 1%;">	          
 			    </div>
-				
-				
 			</div>
 			
 			<div class="center">
@@ -151,41 +149,26 @@ form .btn:hover button{
 <table>
   <tr>
      <th>Patrolman ID</th>
-	<th>Username</th>
     <th>Schedule ID</th>
     <th>Time</th>
 	<th>Date</th>
 	<th>Tools</th>	   
   </tr>
   
-    <c:forEach items="${schedules} var="schedule">
+    <c:forEach items="${schedules}" var="schedule">
   <tr>
   		<td><c:out value="${schedule.patrolId}" /></td>
   		<td><c:out value="${schedule.patrolmanUsername}" /></td>
   		<td><c:out value="${schedule.scheduleId}" /></td>
   		<td><c:out value="${schedule.scheduleTime}" /></td>
-</c:forEach>
+    </c:forEach>
   
   <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td>-</td>
-	 <td><a href="viewDetailSchedule.jsp" class="button button1"><b>VIEW </b></a></td>
+	 <td><a href="viewDetailSchedule.jsp" class="button button1"><b>VIEW</b></a></td>
   </tr>
   
-  <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td>-</td> 
-	 <td><a href="viewDetailSchedule.jsp" class="button button1"><b>VIEW</b></a></td>
  
 </table>
-</div>
-	</div>
 
 </body>
 </html>

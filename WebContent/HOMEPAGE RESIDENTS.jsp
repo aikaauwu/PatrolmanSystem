@@ -168,7 +168,7 @@ a:hover, a:active {
 			        <b href="PSchedule.html"><img class="card-img" src="img/calander img.png" alt="SCHEDULE" /></b>
 		            <h3>SCHEDULE</h3>
 		
-				<a href="res viewSchedule.jsp" target="_blank">View Schedule</a>
+				<a href="listScheduleController">View Schedule</a>
 				<hr>.</hr>
 				
 				
@@ -179,7 +179,7 @@ a:hover, a:active {
 			        <b href="PReport.html"><img class="card-img" src="img/report p.png" alt="REPORT" /></b>
 			        <h3>REPORT</h3>
 				
-					<a href="res viewReport.jsp" target="_blank">View Report</a>
+					<a href="ListReport">View Report</a>
 					<hr>.</hr>
 				
 		        </div>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -122,9 +122,7 @@ a {text-decoration:none;}
 			
   					<div class="imgcontainer">
   					</div>
-		
-			
-		 	
+  						 	
 				<div class="data">
                   <label> Location ID:</label> 		  
                </div>
@@ -136,12 +134,20 @@ a {text-decoration:none;}
                <div class="data">
                   <label>Location Address:</label>  				
                </div>
-			
+		  <c:forEach items="${locations}" var="location2">
+  <tr>
+  		<td><c:out value="${location2.patrolId}" /></td>
+  		<td><c:out value="${location2.patrolmanUsername}" /></td>
+  		<td><c:out value="${location2.scheduleId}" /></td>
+  		<td><c:out value="${location2.scheduleTime}" /></td>
+    </c:forEach>
+</div>
             </form>
             
             </div>
 			</div>
          </div>
-      </div>
+
+      
 </body>
 </html>

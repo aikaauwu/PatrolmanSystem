@@ -148,7 +148,7 @@ a{margin-right: 4px;}
 <div class="header">
 
   <div class="header-right">
-   <a href="Pat Profile.jsp">PROFILE</a>
+   <a href="PatrolmanViewProfileServlet">PROFILE</a>
     <a href="login patrolman.jsp">LOGOUT</a>
   </div>
 </div>
@@ -161,7 +161,7 @@ a{margin-right: 4px;}
 			        <b href=""><img class="card-img" src="img/calander img.png" alt="SCHEDULE" /></b>
 		            <h3>SCHEDULE</h3>
 		
-				<a href="pat viewSchedule.jsp" target="_blank">View Schedule</a>
+				<a href="listScheduleControllerPat">View Schedule</a>
 				<hr>.</hr>
 				
 				

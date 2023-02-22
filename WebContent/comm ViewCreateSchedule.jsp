@@ -158,24 +158,16 @@ form .btn:hover button{
 	<th>Action</th>	  
   </tr>
   <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td>-</td>
-	   <td><a href="comm CreateSchedule.jsp" class="button button1"><b>CREATE </b></a></td>
-  </tr>
+   <c:forEach items="${schedules}" var="schedule">
   <tr>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-	 <td>-</td>
-	 <td>-</td>
+  		<td><c:out value="${schedule.patrolId}" /></td>
+  		<td><c:out value="${schedule.patrolmanUsername}" /></td>
+  		<td><c:out value="${schedule.scheduleId}" /></td>
+  		<td><c:out value="${schedule.scheduleTime}" /></td>
+    </c:forEach>
 	   <td><a href="comm CreateSchedule.jsp" class="button button1"><b>CREATE </b></a></td>
-	 
-	
-	 
   </tr>
+ 
  
 </table>
 </div>

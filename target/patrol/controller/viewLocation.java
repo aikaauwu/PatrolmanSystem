@@ -1,6 +1,6 @@
 package patrol.controller;
 
-import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.RequestDispatcher; 
 import jakarta.servlet.ServletException; 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -29,7 +29,7 @@ public class viewLocation extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		int locationId = Integer.parseInt(request.getParameter("locationId"));
-		request.setAttribute("location2",locationDAO.getLocationDetails());
+		request.setAttribute("location",locationDAO.getLocationDetail());
 		RequestDispatcher view = request.getRequestDispatcher("viewDetailLocation.jsp");
 		view.forward(request, response);
 	}

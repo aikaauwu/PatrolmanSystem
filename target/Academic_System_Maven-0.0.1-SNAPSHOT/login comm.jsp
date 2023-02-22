@@ -118,7 +118,7 @@ a {text-decoration:none;}
          <div class="container">
 		 
 		 
-            <div class="text"><b>Zulmittee Login</b></div>
+            <div class="text"><b>Committee Login</b></div>
             
 			<div id="frmRegistration">
 				<div class="hero">

@@ -28,8 +28,8 @@ public class viewLocation extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int locationId = Integer.parseInt(request.getParameter("locationId"));
-		request.setAttribute("location",locationDAO.getLocationDetail());
+		String locationId = (request.getParameter("locationId"));
+		request.setAttribute("locations",locationDAO.getLocationDetail(locationId));
 		RequestDispatcher view = request.getRequestDispatcher("viewDetailLocation.jsp");
 		view.forward(request, response);
 	}

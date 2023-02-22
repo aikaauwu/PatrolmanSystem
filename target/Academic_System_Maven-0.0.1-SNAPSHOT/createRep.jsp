@@ -153,13 +153,13 @@ a {text-decoration:none;}
 
 
 			<div class="data">
-                  <label>Patrolman ID:</label> 
-                  <input type="text" name="patrolmanId" >			  
+                  <label>Report Id:</label> 
+                  <input type="text" name="reportId" >			  
                </div>
 			
                <div class="data">
-                  <label>Username:</label> 	
-                  <input type="text" name="patrolmanUsername" >				  
+                  <label>Patrolman Id:</label> 	
+                  <input type="text" name="patrolmanId" >				  
                </div>
 			   
                <div class="data">

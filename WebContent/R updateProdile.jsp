@@ -118,41 +118,39 @@ a {text-decoration:none;}
             <form action="login_code.php">
 			<div class="hero">
 			
-			<form action="/action_page.php" method="post">
+			<form action="ResidentUpdateDetailServlet" method="post">
   <div class="imgcontainer">
   </div>
 
 
-			<div class="data">
-                  <label>Resident ID:</label> 			  
-               </div>
+		
 			
                <div class="data">
-                  <label>Name:</label> 
-					<input type="text" required>				  
+                  <label>Resident Name:</label> 
+					<input type="text" name="residentName" value="<c:out value="${resident.residentName}"/>" />				  
                </div>
                <div class="data">
                   <label>Phone Number:</label>   
-					<input type="number" required>
+					<input type="number" name="residentPhoneNum" value="<c:out value="${resident.residentPhoneNum}"/>" />	
                </div>
 			   <div class="data">
                   <label>Address:</label>    
-					<input type="text" required>
+					<input type="text" name="residentAddress" value="<c:out value="${resident.residentAddress}"/>" />	
                </div>
 			   <div class="data">
                   <label>Email:</label> 
-					<input type="email" required>
+					<input type="email" name="residentEmail" value="<c:out value="${resident.residentEmail}"/>" />	
                </div>
 			   <div class="data">
                   <label>Username:</label>    
-					<input type="text" required>
+					<input type="text" name="residentUsername" value="<c:out value="${resident.residentUsername}"/>" />	
                </div>
 			   <div class="data">
                   <label>Password:</label>  
-					<input type="password" required>
+					<input type="password" name="residentPassword" value="<c:out value="${resident.residentPassword}"/>" />	
                </div>
                <div class="btn">
-                 <button type="submit" formaction="Res Profile.jsp"><b>DONE</b></button>
+                 <button type="submit""><b>DONE</b></button>
                </div>
 			   
 			   

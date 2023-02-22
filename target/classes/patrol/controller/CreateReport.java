@@ -41,8 +41,8 @@ public class CreateReport extends HttpServlet {
 		
 		dao.addReport(r); //invoke method addShawl() in ShawlDAO
 		
-		request.setAttribute("report", ReportDAO.getReportDetails());
-		RequestDispatcher view = request.getRequestDispatcher("pat viewReport.jsp"); //dia pergi mana lepas tu
+		request.setAttribute("reports", ReportDAO.getReportDetails());
+		RequestDispatcher view = request.getRequestDispatcher("viewReportPat"); //dia pergi mana lepas tu
 		view.forward(request, response);
 	}
 }

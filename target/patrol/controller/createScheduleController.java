@@ -1,6 +1,6 @@
 package patrol.controller;
 
-import javax.servlet.RequestDispatcher;
+import javax.servlet.RequestDispatcher; 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,7 +33,6 @@ public class createScheduleController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 		
 		 scheduleModel s = new scheduleModel();
 		    s.setScheduleId(request.getParameter("scheduleId"));

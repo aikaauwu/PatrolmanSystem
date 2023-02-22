@@ -28,6 +28,35 @@ public class locationDAO {
 	private int locationId;
 	private String locationAddress;
 	
+	public static Location getLocationDetail(String locationId) { 
+	    Location locations = new Location();
+	    try {
+	      //call getConnection() method
+	      con = ConnectionManager.getConnection();
+
+	      
+	      ps = con.prepareStatement("SELECT * FROM location WHERE locationId=?");
+
+	      //execute query
+	      
+	      rs = ps.executeQuery();
+	      if(rs.next()) {
+	        locations.setLocationId(rs.getInt("locationId"));
+	        locations.setLocationArea(rs.getString("locationArea"));
+	        locations.setLocationAddress(rs.getString("locationAddress"));
+	        
+	        
+	      
+	      //close connection
+	      con.close();
+	      }
+
+	    } catch (Exception e) {
+	      e.printStackTrace();
+	    }
+	    return locations; 
+	  }
+	
 	
 	//Complete addOrder() method
 	/*public void addSchedule(scheduleModel bean) {

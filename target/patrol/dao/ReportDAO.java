@@ -93,7 +93,7 @@ public class ReportDAO {
 						r.setReportId(rs.getString("reportId"));
 						r.setPatrolmanId(rs.getString("patrolmanId"));
 						r.setReportDescription(rs.getString("reportDescription"));
-						//r.setreportDateSubmit(rs.getString("reportDateSubmit"));
+						r.setreportDateSubmit(rs.getString("reportDateSubmit"));
 						report.add(r);
 						}
 				//close connection

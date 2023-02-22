@@ -134,13 +134,13 @@ a {text-decoration:none;}
                <div class="data">
                   <label>Location Address:</label>  				
                </div>
-		  <c:forEach items="${locations}" var="location2">
+		 
   <tr>
-  		<td><c:out value="${location2.patrolId}" /></td>
-  		<td><c:out value="${location2.patrolmanUsername}" /></td>
-  		<td><c:out value="${location2.scheduleId}" /></td>
-  		<td><c:out value="${location2.scheduleTime}" /></td>
-    </c:forEach>
+  		
+  		<td><c:out value="${locations.locationId}" /></td>
+  		<td><c:out value="${locations.locationArea}" /></td>
+  		<td><c:out value="${locations.locationArea}" /></td>
+   
 </div>
             </form>
             

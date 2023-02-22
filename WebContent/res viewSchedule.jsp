@@ -189,6 +189,7 @@ a{margin-right: 4px;}
   		<td><c:out value="${schedule.scheduleTime}" /></td>
   		<td><c:out value="${schedule.scheduleDate}" /></td>
   		<td><c:out value="${schedule.locationId}" /></td>
+  		
 </c:forEach>
  
 </table>

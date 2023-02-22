@@ -173,8 +173,7 @@ a{margin-right: 4px;}
 			        <h3>REPORT</h3>
 				
 					<a href="createRep.jsp" target="_blank">Create Report</a>
-					<a href="updateRep.jsp" target="_blank">Update Report</a>
-					<a href="pat viewReport.jsp" target="_blank">View Report</a>
+					<a href="ListReport" >View Report</a>
 					<hr>.</hr>
 				
 		        </div>

@@ -170,7 +170,7 @@ a{margin-right: 4px;}
 		            <h3>SCHEDULE</h3>
 		
 				<a href="listScheduleControllerComm">View Schedule</a>
-				<a href="createScheduleController" target="_blank">Create Schedule</a>
+				<a href="comm CreateSchedule.jsp" >Create Schedule</a>
 				<hr>.</hr>
 				
 				

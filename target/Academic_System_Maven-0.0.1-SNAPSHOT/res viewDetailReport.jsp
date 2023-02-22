@@ -133,6 +133,9 @@ a {text-decoration:none;}
                <div class="data">
                   <label>Phone Number: <c:out value="${report.reportDescription}" /></label>      
                </div>
+                <div class="data">
+                  <label>Date Created: <c:out value="${report.reportDateSubmit}" /></label>      
+               </div>
 			
             </form>
             

@@ -28,6 +28,38 @@ public class scheduleDao {
 	private String scheduleTime;
 	private String locationId;
 	
+	public static scheduleModel getScheduleDetail(String scheduleId) { 
+	    scheduleModel schedule = new scheduleModel();
+	    try {
+	      //call getConnection() method
+	      con = ConnectionManager.getConnection();
+
+	      
+	      ps = con.prepareStatement("SELECT * FROM schedule WHERE scheduleId=?");
+	    
+
+	      //execute query
+	    
+	      
+	      rs = ps.executeQuery();
+	      if(rs.next()) {
+	      schedule.setScheduleId(rs.getString("scheduleId"));
+	      schedule.setPatrolmanId(rs.getString("patrolmanId"));
+	      schedule.setScheduleTime(rs.getString("scheduleTime"));
+	      schedule.setscheduleDate(rs.getString("scheduleDate"));
+	      schedule.setLocationId(rs.getString("locationId"));
+	      
+	      
+	      //close connection
+	      con.close();
+	      }
+
+	    } catch (Exception e) {
+	      e.printStackTrace();
+	    }
+	    return schedule; 
+	  }
+	
 	//Complete addOrder() method
 	public void addSchedule(scheduleModel bean) {
 		

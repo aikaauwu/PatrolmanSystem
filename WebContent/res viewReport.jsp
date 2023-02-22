@@ -182,6 +182,7 @@ a{margin-right: 4px;}
 								<th>Report Id</th>
 								<th>Patrolman Id</th>
 								<th>Report Description</th>
+								<th>Date Created</th>
 								
 								<th colspan="3"></th>
 							</tr>
@@ -190,6 +191,7 @@ a{margin-right: 4px;}
 									<td><c:out value="${report.reportId}" /></td>
 									<td><c:out value="${report.patrolmanId}" /></td>
 									<td><c:out value="${report.reportDescription}" /></td>
+									<td><c:out value="${report.reportDateSubmit}" /></td>
 									<td><a href="viewReport?action=view&reportId=<c:out value="${report.reportId}"/>" class="button">View</a></td>
 							</c:forEach>
 			</table>

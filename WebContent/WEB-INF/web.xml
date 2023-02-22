@@ -221,5 +221,28 @@
     <url-pattern>/ListReportComm</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+    <description></description>
+    <display-name>viewReportPat</display-name>
+    <servlet-name>viewReportPat</servlet-name>
+    <servlet-class>patrol.controller.viewReportPat</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewReportPat</servlet-name>
+    <url-pattern>/viewReportPat</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>listReport</display-name>
+    <servlet-name>listReport</servlet-name>
+    <servlet-class>patrol.controller.listReport</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>listReport</servlet-name>
+    <url-pattern>/listReport</url-pattern>
+  </servlet-mapping>
+  
+  
   
 </web-app>
